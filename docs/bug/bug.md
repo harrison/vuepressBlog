@@ -3,13 +3,13 @@
 ## 微信端调整字体大小后页面显示异常
 
 ios：在css中加入-webkit-text-size-adjust: 100% !important;
-```
+``` css
 body {
     -webkit-text-size-adjust: 100% !important;
 }
 ```
 安卓：借助WeixinJSBridge对象来阻止字体大小调整，将此段代码放在在程序的入口页面(例如 index.html / index.ejs等)即可
-```
+``` javascript
 (function () {
     if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
         handleFontSize();
@@ -29,13 +29,15 @@ body {
 
 ## ios端input无法输入
 为input加入样式后即可解决
-```
--webkit-user-select:text !important;
+``` css
+input{
+    -webkit-user-select:text !important;
+}
 ```
 
 ## canvas绘制图片调用toDataUrl跨域
 为img对象添加属性crossOrigin即可解决
-```
+``` javascript
 img.setAttribute("crossOrigin",'anonymous');
 ```
 
