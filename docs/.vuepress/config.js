@@ -2,12 +2,14 @@ module.exports = {
   title: 'Vanalso\`s Blog',
   description: '个人技术博客',
 
+  markdown: {
+    lineNumbers: true
+  },
+
   themeConfig: {
+    lastUpdated: '最后更新：',
+    smoothScroll: true,
     nav: [{
-        text: 'TimeLine',
-        link: '/timeline/',
-        icon: 'reco-date'
-      }, {
         text: '首页',
         link: '/'
       },
